@@ -72,7 +72,7 @@ func TestServerCodec(t *testing.T) {
 					return wantN, wantErr
 				},
 			)
-			codec = NewServerCodec[any](resultSer, nil)
+			codec = NewServerCodec[any](nil, resultSer)
 		)
 		n, err := codec.Encode(wantResult, wantWriter)
 		asserterror.EqualError(err, wantErr, t)
@@ -91,7 +91,7 @@ func TestServerCodec(t *testing.T) {
 					return wantCmd, wantN, wantErr
 				},
 			)
-			codec = NewServerCodec[any](nil, cmdSer)
+			codec = NewServerCodec[any](cmdSer, nil)
 		)
 		cmd, n, err := codec.Decode(wantReader)
 		asserterror.EqualError(err, wantErr, t)
