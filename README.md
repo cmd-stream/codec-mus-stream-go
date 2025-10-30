@@ -1,7 +1,6 @@
 # codec-mus-stream-go
 
-**codec-mus-stream-go** provides a MUS-based streaming codec implementation for
-[cmd-stream-go](https://github.com/cmd-stream/cmd-stream-go).
+**codec-mus-stream-go** provides a MUS-based streaming codec for [cmd-stream-go](https://github.com/cmd-stream/cmd-stream-go).
 
 ## Example
 
