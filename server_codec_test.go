@@ -5,8 +5,8 @@ import (
 	"testing"
 
 	"github.com/cmd-stream/core-go"
-	cmock "github.com/cmd-stream/core-go/testdata/mock"
-	tmock "github.com/cmd-stream/transport-go/testdata/mock"
+	cmocks "github.com/cmd-stream/testkit-go/mocks/core"
+	tmocks "github.com/cmd-stream/testkit-go/mocks/transport"
 	"github.com/mus-format/mus-stream-go"
 	"github.com/mus-format/mus-stream-go/testdata/mock"
 	asserterror "github.com/ymz-ncnk/assert/error"
@@ -15,8 +15,8 @@ import (
 func TestServerCodec(t *testing.T) {
 	t.Run("Encode", func(t *testing.T) {
 		var (
-			wantResult = cmock.NewResult()
-			wantWriter = tmock.NewWriter()
+			wantResult = cmocks.NewResult()
+			wantWriter = tmocks.NewWriter()
 			wantN      = 3
 			wantErr    = errors.New("encode error")
 			resultSer  = mock.NewSerializer[core.Result]().RegisterMarshal(
@@ -35,9 +35,9 @@ func TestServerCodec(t *testing.T) {
 
 	t.Run("Decode", func(t *testing.T) {
 		var (
-			wantCmd    = cmock.NewCmd()
+			wantCmd    = cmocks.NewCmd()
 			wantN      = 3
-			wantReader = tmock.NewReader()
+			wantReader = tmocks.NewReader()
 			wantErr    = errors.New("decode error")
 			cmdSer     = mock.NewSerializer[core.Cmd[any]]().RegisterUnmarshal(
 				func(r mus.Reader) (cmd core.Cmd[any], n int, err error) {
