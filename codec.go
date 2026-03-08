@@ -1,5 +1,4 @@
-// Package codec provides a MUS-based streaming codec implementation for
-// cmd-stream-go.
+// Package codec provides a MUS-based streaming codec implementation for cmd-stream.
 package codec
 
 import (

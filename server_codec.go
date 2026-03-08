@@ -6,7 +6,7 @@ import (
 )
 
 // NewServerCodec creates a new MUS-based streaming server codec for
-// cmd-stream-go.
+// cmd-stream.
 //
 // Parameters:
 //   - cmdSer:   A MUS serializer for Command types implementing core.Cmd[T].
