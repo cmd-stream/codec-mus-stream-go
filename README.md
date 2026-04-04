@@ -1,13 +1,19 @@
 # codec-mus-stream-go
 
-**codec-mus-stream-go** provides a MUS-based streaming codec for [cmd-stream-go](https://github.com/cmd-stream/cmd-stream-go).
+**codec-mus-stream** provides a MUS-based streaming codec for [cmd-stream](https://github.com/cmd-stream/cmd-stream-go).
 
-## Example
+## How To
 
 ```go
+
+import (
+ "github.com/cmd-stream/cmd-stream-go/core"
+ cdc "github.com/cmd-stream/codec-mus-stream-go"
+)
+
 var (
-  serverCodec = codec.NewServerCodec(cmds.CmdMUS, results.ResultMUS)
-  clientCodec = codec.NewClientCodec(cmds.CmdMUS, results.ResultMUS)
+  serverCodec = cdc.NewServerCodec(cmds.CmdMUS, results.ResultMUS)
+  clientCodec = cdc.NewClientCodec(cmds.CmdMUS, results.ResultMUS)
 )
 ```
 
