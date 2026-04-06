@@ -2,6 +2,7 @@
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/cmd-stream/codec-mus-stream-go.svg)](https://pkg.go.dev/github.com/cmd-stream/codec-mus-stream-go)
 [![GoReportCard](https://goreportcard.com/badge/cmd-stream/codec-mus-stream-go)](https://goreportcard.com/report/github.com/cmd-stream/codec-mus-stream-go)
+[![codecov](https://codecov.io/gh/cmd-stream/codec-mus-stream-go/graph/badge.svg)](https://codecov.io/gh/cmd-stream/codec-mus-stream-go)
 
 **codec-mus-stream** provides a MUS-based streaming codec for [cmd-stream](https://github.com/cmd-stream/cmd-stream-go).
 
