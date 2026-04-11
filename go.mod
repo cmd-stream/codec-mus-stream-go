@@ -3,7 +3,7 @@ module github.com/cmd-stream/codec-mus-stream-go
 go 1.24.1
 
 require (
-	github.com/cmd-stream/cmd-stream-go v0.5.1
+	github.com/cmd-stream/cmd-stream-go v0.5.2
 	github.com/mus-format/mus-stream-go v0.9.1
 	github.com/ymz-ncnk/assert v0.0.0-20260108210721-155bc9aa4282
 )
