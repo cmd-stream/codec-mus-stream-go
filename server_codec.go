@@ -5,6 +5,10 @@ import (
 	"github.com/mus-format/mus-stream-go"
 )
 
+// ServerCodec defines a MUS-based streaming server codec.
+type ServerCodec[T any] = codec[core.Result, core.Cmd[T],
+	mus.Serializer[core.Result], mus.Serializer[core.Cmd[T]]]
+
 // NewServerCodec creates a new MUS-based streaming server codec.
 // It uses resultSer for encoding results and cmdSer for decoding commands.
 //
@@ -16,7 +20,3 @@ func NewServerCodec[T any](cmdSer mus.Serializer[core.Cmd[T]],
 ) ServerCodec[T] {
 	return ServerCodec[T]{serT: resultSer, serV: cmdSer}
 }
-
-// ServerCodec defines a MUS-based streaming server codec.
-type ServerCodec[T any] = codec[core.Result, core.Cmd[T],
-	mus.Serializer[core.Result], mus.Serializer[core.Cmd[T]]]

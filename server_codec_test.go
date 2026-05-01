@@ -6,8 +6,7 @@ import (
 	"testing"
 
 	"github.com/cmd-stream/cmd-stream-go/core"
-	cmock "github.com/cmd-stream/cmd-stream-go/test/mock/core"
-	tmock "github.com/cmd-stream/cmd-stream-go/test/mock/transport"
+	cmock "github.com/cmd-stream/cmd-stream-go/test/mock"
 	cdc "github.com/cmd-stream/codec-mus-stream-go"
 	"github.com/mus-format/mus-stream-go"
 	"github.com/mus-format/mus-stream-go/test/mock"
@@ -17,7 +16,7 @@ import (
 func TestServerCodec_Encode(t *testing.T) {
 	var (
 		wantResult = cmock.NewResult()
-		wantWriter = tmock.NewWriter()
+		wantWriter = cmock.NewWriter()
 		wantN      = 3
 		innerErr   = errors.New("encode error")
 		wantErr    = fmt.Errorf(cdc.ErrorPrefix+"%w", innerErr)
@@ -40,7 +39,7 @@ func TestServerCodec_Decode(t *testing.T) {
 	var (
 		wantCmd    = cmock.NewCmd[any]()
 		wantN      = 3
-		wantReader = tmock.NewReader()
+		wantReader = cmock.NewReader()
 		innerErr   = errors.New("decode error")
 		wantErr    = fmt.Errorf(cdc.ErrorPrefix+"%w", innerErr)
 		cmdSer     = mock.NewSerializer[core.Cmd[any]]()
